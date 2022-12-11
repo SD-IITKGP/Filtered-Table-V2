@@ -26,47 +26,49 @@ function Dropdown(props) {
     });
     props.target();
   }
-  function CheckIt() {
-    if (props.change.Delivery===true&&document.getElementById("Delivery").checked===false) {
-      document.getElementById("Delivery").checked=true;
-    }else if(props.change.Delivery===false&&document.getElementById("Delivery").checked===true){
-      document.getElementById("Delivery").checked=false;
+  function CheckIt2() {
+    console.log(document.getElementById("Delivery2").checked);
+    if (props.change.Delivery===true&&document.getElementById("Delivery2").checked===false) {
+      console.log("In");
+      document.getElementById("Delivery2").checked=true;
+    }else if(props.change.Delivery===false&&document.getElementById("Delivery2").checked===true){
+      document.getElementById("Delivery2").checked=false;
     }
-    if (props.change.DineIn===true&&document.getElementById("DineIn").checked===false) {
-      document.getElementById("DineIn").checked=true;
-    }else if(props.change.DineIn===false&&document.getElementById("DineIn").checked===true){
-      document.getElementById("DineIn").checked=false;
+    if (props.change.DineIn===true&&document.getElementById("DineIn2").checked===false) {
+      document.getElementById("DineIn2").checked=true;
+    }else if(props.change.DineIn===false&&document.getElementById("DineIn2").checked===true){
+      document.getElementById("DineIn2").checked=false;
     }
-    if (props.change.TakeAway===true&&document.getElementById("TakeAway").checked===false) {
-      document.getElementById("TakeAway").checked=true;
-    }else if(props.change.TakeAway===false&&document.getElementById("TakeAway").checked===true){
-      document.getElementById("TakeAway").checked=false;
+    if (props.change.TakeAway===true&&document.getElementById("TakeAway2").checked===false) {
+      document.getElementById("TakeAway2").checked=true;
+    }else if(props.change.TakeAway===false&&document.getElementById("TakeAway2").checked===true){
+      document.getElementById("TakeAway2").checked=false;
     }
-    if (props.change.Paid===true&&document.getElementById("Paid").checked===false) {
-      document.getElementById("Paid").checked=true;
-    }else if(props.change.Paid===false&&document.getElementById("Paid").checked===true){
-      document.getElementById("Paid").checked=false;
+    if (props.change.Paid===true&&document.getElementById("Paid2").checked===false) {
+      document.getElementById("Paid2").checked=true;
+    }else if(props.change.Paid===false&&document.getElementById("Paid2").checked===true){
+      document.getElementById("Paid2").checked=false;
     }
-    if (props.change.Unpaid===true&&document.getElementById("Unpaid").checked===false) {
-      document.getElementById("Unpaid").checked=true;
-    }else if(props.change.Unpaid===false&&document.getElementById("Unpaid").checked===true){
-      document.getElementById("Unpaid").checked=false;
+    if (props.change.Unpaid===true&&document.getElementById("Unpaid2").checked===false) {
+      document.getElementById("Unpaid2").checked=true;
+    }else if(props.change.Unpaid===false&&document.getElementById("Unpaid2").checked===true){
+      document.getElementById("Unpaid2").checked=false;
     }
-    if (props.change.NewOrder===true&&document.getElementById("NewOrder").checked===false) {
-      document.getElementById("NewOrder").checked=true;
-    }else if(props.change.NewOrder===false&&document.getElementById("NewOrder").checked===true){
-      document.getElementById("NewOrder").checked=false;
+    if (props.change.NewOrder===true&&document.getElementById("NewOrder2").checked===false) {
+      document.getElementById("NewOrder2").checked=true;
+    }else if(props.change.NewOrder===false&&document.getElementById("NewOrder2").checked===true){
+      document.getElementById("NewOrder2").checked=false;
     }
-    if (props.change.OrderUpdated===true&&document.getElementById("OrderUpdated").checked===false) {
-      document.getElementById("OrderUpdated").checked=true;
-    }else if(props.change.OrderUpdated===false&&document.getElementById("OrderUpdated").checked===true){
-      document.getElementById("OrderUpdated").checked=false;
+    if (props.change.OrderUpdated===true&&document.getElementById("OrderUpdated2").checked===false) {
+      document.getElementById("OrderUpdated2").checked=true;
+    }else if(props.change.OrderUpdated===false&&document.getElementById("OrderUpdated2").checked===true){
+      document.getElementById("OrderUpdated2").checked=false;
     }
   }
-  setTimeout(CheckIt,500);
+  setTimeout(CheckIt2,500);
   if (props.field === "Order type") {
     return (
-      <th className="dropdown">
+      <th className="btn-group">
         <button
           class="btn dropdown-toggle mx-0 px-0"
           type="button"
@@ -81,11 +83,10 @@ function Dropdown(props) {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div className="dropdown-item">
             <input
-            id="Delivery"
+            id="Delivery2"
               name="Delivery"
               type="checkbox"
               onClick={Clicked}
-              value={!props.change.Delivery}
             />
             <label className="mx-1" style={{ color: "#E63946" }}>
               Delivery
@@ -93,10 +94,9 @@ function Dropdown(props) {
           </div>
           <div className="dropdown-item">
             <input
-            id="DineIn"
+            id="DineIn2"
               name="DineIn"
               onClick={Clicked}
-              value={!props.change.DineIn}
               type="checkbox"
             />
             <label className="mx-1" style={{ color: "#4361EE" }}>
@@ -105,10 +105,9 @@ function Dropdown(props) {
           </div>
           <div className="dropdown-item">
             <input
-            id="TakeAway"
+            id="TakeAway2"
               name="TakeAway"
               onClick={Clicked}
-              value={!props.change.TakeAway}
               type="checkbox"
             />
             <label className="mx-1" style={{ color: "#F7B801" }}>
@@ -134,9 +133,8 @@ function Dropdown(props) {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div className="dropdown-item">
             <input
-            id="NewOrder"
+            id="NewOrder2"
               name="NewOrder"
-              value={!props.change.NewOrder}
               onClick={Clicked}
               type="checkbox"
             />
@@ -152,10 +150,9 @@ function Dropdown(props) {
           </div>
           <div className="dropdown-item">
             <input
-            id="OrderUpdated"
+            id="OrderUpdated2"
               name="OrderUpdated"
               onClick={Clicked}
-              value={!props.change.OrderUpdated}
               type="checkbox"
             />
             <label
@@ -187,10 +184,9 @@ function Dropdown(props) {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div className="dropdown-item">
             <input
-            id="Paid"
+            id="Paid2"
               name="Paid"
               onClick={Clicked}
-              value={!props.change.Paid}
               type="checkbox"
             />
             <label
@@ -205,10 +201,9 @@ function Dropdown(props) {
           </div>
           <div className="dropdown-item">
             <input
-            id="Unpaid"
+            id="Unpaid2"
               name="Unpaid"
               onClick={Clicked}
-              value={!props.change.Unpaid}
               type="checkbox"
             />
             <label
